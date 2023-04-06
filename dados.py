@@ -45,7 +45,7 @@ print(dfSelectCNPJ)
 
 
 dfSelectEmitente= df.loc[df['Emitente'] == "AMAZON SERVICOS DE VAREJO DO BRASIL LTDA"]
-#print(dfSelectEmitente)
+print(dfSelectEmitente)
 
 #Group by 1
 df2 = dfSelectEmitente.groupby('Emitente')['VALORNF'].sum()
