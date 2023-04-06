@@ -49,10 +49,10 @@ dfSelectEmitente= df.loc[df['Emitente'] == "AMAZON SERVICOS DE VAREJO DO BRASIL 
 
 #Group by 1
 df2 = dfSelectEmitente.groupby('Emitente')['VALORNF'].sum()
-#print(df2)
+print(df2)
 
 
 df3 = df.groupby('Emitente')['VALORNF'].sum()
-#print(df3)
+print(df3)
 
 
