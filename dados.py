@@ -6,7 +6,7 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 
 
 
-dataFiles =['dados//2019//ConsultaNFP_33176298862.csv','dados//2020//ConsultaNFP_33176298862.csv','dados//2021//ConsultaNFP_33176298862.csv','dados//2022//ConsultaNFP_33176298862.csv']
+dataFiles =['dados//2019//ConsultaNFP_33176298862.csv','dados//2020//ConsultaNFP_33176298862.csv','dados//2021//ConsultaNFP_33176298862.csv','dados//2022//ConsultaNFP_33176298862.csv','dados//2023//ConsultaNFP_33176298862.csv']
 df = pd.concat((pd.read_csv(filename, sep='	', encoding='utf-16')for filename in dataFiles ))
 #df = pd.read_csv("dados//2020//ConsultaNFP_33176298862.csv", sep='	', encoding='utf-16')
 df['CNPJ'] = df['CNPJ emit.'].str.replace('.','').str.replace('/','').str.replace('-','')
@@ -64,11 +64,16 @@ df3 = df.groupby('Emitente')['VALORNF'].sum()
 #df4 = df.groupby('ANO')['ANO'].count()
 
 
+df10 = df.groupby(['ANO','MES'])['MES'].apply(lambda x : x.count()).reset_index(name='Total')
+print("rafael")
+print(df10)
+
+
 df9 = df.groupby('ANO')['VALORNF'].apply(lambda x : x.sum()).reset_index(name='Total')
-print(df9)
+#print(df9)
 
 df4 = df.groupby('ANO')['ANO'].apply(lambda x : x.count()).reset_index(name='Total')
-
+#print(df4)
 
 ano = df4["ANO"].astype(int).astype(str)
 total = df4["Total"]
@@ -82,7 +87,7 @@ plt.ylabel('Total')
 
 #plt.plot(ano, total, color='green')
 
-plt.show()
+#plt.show()
 
 
 
