@@ -5,7 +5,7 @@ warnings.simplefilter(action='ignore', category=UserWarning)
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 
-#
+#https://docs.python.org/3/library/sqlite3.html
 #dataFiles =['dados//2019//ConsultaNFP_33176298862.csv','dados//2020//ConsultaNFP_33176298862.csv','dados//2021//ConsultaNFP_33176298862.csv','dados//2022//ConsultaNFP_33176298862.csv','dados//dados//ConsultaNFP_33176298862 (1).csv']
 dataFiles =['dados//dados//ConsultaNFP_33176298862 copy.csv']
 df = pd.concat((pd.read_csv(filename, sep='	', encoding='utf-16')for filename in dataFiles ))
