@@ -32,7 +32,7 @@ df = pd.read_csv('tudo.csv',  sep='\t',encoding='UTF-16', quoting=csv.QUOTE_NONE
 x=(df['"CNPJ emit."'].str.replace('"', '').str.replace('.', '').str.replace('/', '').str.replace('-', '').to_string(index=False,header=False))
 
 
-df2 = x.groupby('"CNPJ emit."').count()
+#df2 = x.groupby('"CNPJ emit."').count()
 
 
-print(df2)
+print(x)
